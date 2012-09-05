@@ -4,63 +4,78 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{{ person.full_name }} CV</title>
+        <meta name="author" content="{{ person.full_name }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}responsive.css" />
         <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}general.js"></script>
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <![endif]-->
+
     </head>
     <body>
 
         <div id="wrapper">
             <div id="banner">
                 <div id="logo">
-                    <img src="{{ MEDIA_URL }}{{ person.mugshot }}" width="95" height="95" alt="me" />
                     <h1>{{ person.full_name }}</h1>
                     <h2>{{ person.short_description }}</h2>
+                </div>
+                <div id="mugshot">
+                    <img src="{{ MEDIA_URL }}{{ person.mugshot }}" width="95" height="95" alt="me" />
                 </div>
                 <div id="info">
                     <p>{{ person.email }}</p>
                     <p>{{ person.phone }}</p>
-                    <p>{{ person.address }}</p>
-                    <div id="contact">
+                    <p>{{ person.full_address }}</p>
+                    <!-- div id="contact">
                     <span>{% trans 'Contact' %}</span>
-                    <div id="form"></div>
+                        <div id="form"></div>
+                    </div -->
                 </div>
+                <br class='clear' />
             </div>
-        </div>
 
-        {% for experience_group in person.experiences_groups.all %}
-        <div class="section">
-            <h3>{{ experience_group.name }}<div class="lefthead"></div></h3>
-            <div class="content">
-                {% for e in experience_group.experiences.all %}
-                <div class="item">
-                    {% if e.date_range %}
-                    <div class="date">{{ e.date_range }}</div>
-                    {% endif %}
-                    <h4>
-                        <a href='{% if e.url %}{{ e.url }}{% else%}#{% endif %}'>{{ e.title }}</a>
-                    </h4>
-                    {% if e.subtitle %}<h5>{{ e.subtitle }}</h5>{% endif %}
-                    {% if e.location %}<h6>{{ e.location }}</h6>{% endif %}
-                    {% if e.summary %}<p>{{ e.summary }}</p>{% endif %}
-                    {% if e.items %}
-                    <ul>
-                    {% for i in e.items.all %}
-                        <li>
-                            {% if i.url %}
-                                <a href="{{ i.url }}">{{ i.url }}</a> -
-                            {% endif %}
-                            {{ i.details }}
-                        </li>
+            {% for experience_group in person.experiences_groups.all %}
+            <div class="section">
+                <h3>{{ experience_group.name }}<div class="lefthead"></div></h3>
+                <div class="content">
+                    {% for e in experience_group.experiences.all %}
+                    <div class="item">
+                        {% if e.date_range %}
+                        <div class="date">{{ e.date_range }}</div>
+                        {% endif %}
+                        <h4>
+                            <a href='{% if e.url %}{{ e.url }}{% else%}#{% endif %}' target="_blank">{{ e.title }}</a>
+                        </h4>
+                        {% if e.subtitle %}<h5>{{ e.subtitle }}</h5>{% endif %}
+                        {% if e.location %}<h6>{{ e.location }}</h6>{% endif %}
+                        {% if e.description %}<p>{{ e.description }}</p>{% endif %}
+                        {% if e.items %}
+                        <ul>
+                        {% for i in e.items.all %}
+                            <li>
+                                {% if i.url %}
+                                    <a href="{{ i.url }}">{{ i.url }}</a> -
+                                {% endif %}
+                                {{ i.details }}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
                     {% endfor %}
-                    </ul>
-                    {% endif %}
                 </div>
-                {% endfor %}
+                <div class="clear"></div>
             </div>
-            <div class="clear"></div>
-        </div>
-        {% endfor %}
+            {% endfor %}
 
+        </div><!-- /wrapper -->
     </body>
 </html>

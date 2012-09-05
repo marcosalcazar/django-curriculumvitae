@@ -8,18 +8,64 @@ body {
     margin:30px 0 30px 0;
     text-align:center;
 }
+a:link {
+    color: #666;
+}
+a:visited {
+    color: #666;
+}
+a:hover {
+    color: #333;
+}
+a:active {
+    color: #666;
+}
+ul, p{
+    line-height:20px;
+}
+.clear{
+    clear:both;
+}
+
 #wrapper{
-    width:960px;
+    min-width: 260px; max-width: 900px;
     margin:0 auto;
     text-align:left;
-    background: url(/static/images/shadow.jpg) repeat-x top #efefef;
+    background: repeat-x top #efefef;
     padding-top:12px;
 }
+
+/**** BANNER -> logo, info, mugshot ****/
 #banner{
-    background:url(/static/images/topbanner.jpg)repeat-x top;
-    height:176px;
     width:100%;
+    border-bottom: 1px solid #ccc;
 }
+#banner #mugshot{
+    padding-top: 40px;
+    float:right;
+    margin-right:30px;
+}
+#banner #mugshot img{
+    padding:5px;
+    background:white;
+    border:1px solid #ccc;
+}
+#banner #logo{
+    float:left;
+    padding:30px;
+    width:400px;
+}
+#banner #info{
+    float:right;
+    position:relative;
+    width:180px;
+    padding-top:40px;
+    padding-right:10px;
+    text-shadow:1px 1px white;
+    text-align: right;
+}
+
+/***** TITULOS *****/
 h1{
     font-size:36px;
     font-weight:bold;
@@ -27,103 +73,11 @@ h1{
     margin:0;
     padding:15px 0 0 0;
 }
-#logo{
-    float:left;
-    padding:30px;
-    width:600px;
-}
-#logo img{
-    float:left;
-    padding:5px;
-    background:white;
-    border:1px solid #ccc;
-    margin-right:30px;
-}
 h2{
     font-size:24px;
     color:#666;
     margin:10px 0 0 0;
     font-weight:normal;
-}
-h6{
-    font-size:0.71em;
-    margin:3px 0 0 0;
-}
-#info{
-    float:right;
-    position:relative;
-    width:250px;
-    height:110px;
-    padding-top:40px;
-    padding-right:40px;
-    text-shadow:1px 1px white;
-}
-#contact{
-    position:absolute;
-    top:20px;
-    right:-14px;
-    background:url(/static/images/3drepeat.jpg) repeat-x top;
-}
-#contact span{
-    display:block;
-    padding:7px 0 0 0;
-    height:38px;
-    width:100px;
-    background:url(/static/images/3dright.jpg) bottom right no-repeat;
-    font-weight:bold;
-    color:white;
-    font-size:14px;
-    text-shadow:1px 1px #005c70;
-    text-align:center;
-    cursor:pointer;
-}
-#contact #form{
-    background:#0aaed1;
-    padding:20px;
-    text-shadow:1px 1px #00596c;
-    color:white;
-    position:relative;
-    z-index:10;
-}
-#contact #form em{
-    position:absolute;
-    bottom:-11px;
-    right:0;
-    background:url(/static/images/3dright.jpg) bottom left;
-    height:12px;
-    width:14px;
-}
-#contact #form p input, #contact #form p textarea{
-    border-top:1px solid #00596c;
-    border-left:1px solid #00596c;
-    border-right:none;
-    border-bottom:none;
-    outline:none;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:12px;
-    color:#666;
-    width:170px;
-    padding:4px;
-}
-#contact #form .button{
-    background:#004959;
-    border:1px solid #33c8e8;
-    color:white;
-    padding:4px;
-}
-#close{
-    position:absolute;
-    top:-27px;
-    right:20px;
-    cursor:pointer;
-    padding-right:20px;
-    height:16px;
-    background:right no-repeat url(/static/images/close.png);
-}
-.section{
-    width:100%;
-    background:url(/static/images/sectionrepeat.jpg) repeat-x bottom;
-    padding:30px 0;
 }
 h3{
     position:relative;
@@ -134,26 +88,7 @@ h3{
     width:180px;
     padding:7px 20px 7px 20px;
     margin:0;
-    float:left;
-}
-.lefthead{
-    background:url(/static/images/h3left.jpg) top left no-repeat;
-    width:14px;
-    height:49px;
-    position:absolute;
-    top:0;
-    left:-14px;
-}
-.content{
-    float:right;
-    padding-right:30px;
-    width:670px;
-}
-.content p{
-    line-height:20px;
-}
-.clear{
-    clear:both;
+    float: left;
 }
 h4{
     margin:0;
@@ -169,10 +104,29 @@ h5{
     color:#666;
     text-shadow:1px 1px white;
 }
-.item{
+h6{
+    font-size:0.71em;
+    margin:3px 0 0 0;
+}
+
+/**** SECCIONES *****/
+.section{
+    width:100%;
     padding:30px 0;
-    border-bottom:1px solid #ddd;
-    position:relative;
+}
+
+.lefthead{
+    background:url(/static/images/h3left.jpg) top left no-repeat;
+    width:14px;
+    height:49px;
+    position:absolute;
+    top:0;
+    left:-14px;
+}
+.content{
+    float:right;
+    padding-right:30px;
+    width:600px;
 }
 .date{
     position:absolute;
@@ -187,18 +141,8 @@ h5{
     text-align:center;
     text-shadow:1px 1px white;
 }
-a:link {
-    color: #666;
-}
-a:visited {
-    color: #666;
-}
-a:hover {
-    color: #333;
-}
-a:active {
-    color: #666;
-}
-ul{
-    line-height:20px;
+.item{
+    padding:30px 0;
+    border-bottom:1px solid #ddd;
+    position:relative;
 }
