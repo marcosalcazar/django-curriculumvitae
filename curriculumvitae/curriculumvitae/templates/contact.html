@@ -1,0 +1,25 @@
+{% load i18n %}
+{% trans 'Please use the form below:' %}
+<form action="{% url contact %}" id="submitform" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input id="submitbutton" name="submit" type="button" value="{% trans 'submit' %}" class="button"/>
+</form>
+<em></em>
+<div id="close">{% trans 'close' %}</div>
+<script>
+$("#close").click(function(){
+    $('#form').slideUp(300);
+    $('#contact').delay(300).animate({
+        width: "100px",
+    }, 300, function() {
+        $('#contact span').css({
+            height: "38px",
+            background: "url(/static/images/3dright.jpg) bottom right no-repeat"
+        });
+    });
+});
+$("#submitbutton").click(function(){
+    go_to_contact(true);
+})
+</script>
