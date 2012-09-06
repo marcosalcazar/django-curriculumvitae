@@ -40,6 +40,15 @@ ul, p{
     width:100%;
     border-bottom: 1px solid #ccc;
 }
+#banner #languages{
+    text-align: right;
+    padding-right: 30px;
+}
+#banner #languages div {
+    width: auto;
+    float: right;
+    margin-left: 15px;
+}
 #banner #mugshot{
     padding-top: 40px;
     float:right;

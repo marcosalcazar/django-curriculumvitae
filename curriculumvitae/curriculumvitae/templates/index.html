@@ -24,6 +24,19 @@
         <div id="wrapper">
             {% if person %}
             <div id="banner">
+                <div id="languages">
+                    {% for lang in LANGUAGES %}
+                        <div>
+                            <form name="setLang{{ lang.0 }}" action="/i18n/setlang/" method="POST">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="/" />
+                                <input type="hidden" name="language" value="{{ lang.0 }}" />
+                                <a href="#" onclick="document.setLang{{ lang.0 }}.submit();return false;">{{ lang.1 }}</a>
+                            </form>
+                        </div>
+                    {% endfor %}
+                    <div class='clear'></div>
+                </div>
                 <div id="logo">
                     <h1>{{ person.full_name }}</h1>
                     <h2>{{ person.short_description }}</h2>

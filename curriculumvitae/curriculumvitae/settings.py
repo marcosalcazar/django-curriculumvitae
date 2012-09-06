@@ -41,8 +41,8 @@ LANGUAGE_CODE = 'en'
 ugettext = lambda s: s  # dummy ugettext function, as django's docs say
 
 LANGUAGES = (
-    ('es', ugettext(u'Esp')),
-    ('en', ugettext(u'Eng')),
+    ('es', ugettext(u'Español')),
+    ('en', ugettext(u'English')),
 )
 
 SITE_ID = 1
@@ -108,6 +108,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
