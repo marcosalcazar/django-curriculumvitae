@@ -3,7 +3,7 @@
     {% csrf_token %}
 
     {% for field in form %}
-        <div class="fieldsWrapper {% if field.errors%}error{% endif %}">
+        <div class="fieldsWrapper {% if field.errors%}error{% endif %} {% if forloop.last %}last{% endif %}">
             {{ field.label_tag }}
             {% if field.errors %}
             <div class="error_messages">

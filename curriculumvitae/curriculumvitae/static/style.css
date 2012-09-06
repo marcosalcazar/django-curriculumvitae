@@ -201,3 +201,6 @@ h6{
     color: red;
     line-height: 15px;
 }
+
+#contact_container .fieldsWrapper.last img{ float:left; width:70px ;}
+#contact_container .fieldsWrapper.last input { width:100px; }
