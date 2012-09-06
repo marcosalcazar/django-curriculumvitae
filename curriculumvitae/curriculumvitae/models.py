@@ -72,7 +72,7 @@ class ExperienceItem(models.Model):
     class Meta:
         verbose_name = _("Experience")
         verbose_name_plural = _("Experiences")
-        ordering = ("-completion_date", "-start_date")
+        ordering = ("completion_date", "start_date")
         translate = ("title", "subtitle", "description", )
 
 
