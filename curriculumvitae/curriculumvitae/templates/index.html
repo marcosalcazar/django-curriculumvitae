@@ -77,7 +77,7 @@
                         </h4>
                         {% if e.subtitle %}<h5>{{ e.subtitle }}</h5>{% endif %}
                         {% if e.location %}<h6>{{ e.location }}</h6>{% endif %}
-                        {% if e.description %}<p>{{ e.description }}</p>{% endif %}
+                        {% if e.description %}<p>{{ e.description|linebreaksbr }}</p>{% endif %}
                         {% if e.items %}
                         <ul>
                         {% for i in e.items.all %}
