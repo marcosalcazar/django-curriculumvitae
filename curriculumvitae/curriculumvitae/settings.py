@@ -41,7 +41,7 @@ LANGUAGE_CODE = 'en'
 ugettext = lambda s: s  # dummy ugettext function, as django's docs say
 
 LANGUAGES = (
-    ('es', ugettext(u'Español')),
+    ('es', ugettext(u'Spanish')),
     ('en', ugettext(u'English')),
 )
 

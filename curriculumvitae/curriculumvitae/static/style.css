@@ -49,6 +49,9 @@ ul, p{
     float: right;
     margin-left: 15px;
 }
+#banner #languages div.active {
+    font-weight: bold;
+}
 #banner #mugshot{
     padding-top: 40px;
     float:right;

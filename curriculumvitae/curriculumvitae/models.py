@@ -2,7 +2,7 @@
 from transmeta import TransMeta
 
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 
 
 class Person(models.Model):
@@ -10,7 +10,8 @@ class Person(models.Model):
 
     first_name = models.CharField(max_length=255,
                                   verbose_name=_("First Name"))
-    last_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255,
+                                 verbose_name=_("Last Name"))
     short_description = \
         models.CharField(max_length=255, verbose_name=_("Short Description"))
     address = models.CharField(max_length=255, null=True, blank=True)
@@ -73,26 +74,6 @@ class ExperienceItem(models.Model):
         verbose_name_plural = _("Experiences")
         ordering = ("-completion_date", "-start_date")
         translate = ("title", "subtitle", "description", )
-
-    def date_range(self):
-        if self.start_date or self.completion_date:
-            return ' - '.join(
-                [self.formatted_start_date(), self.formatted_end_date()]
-            )
-        else:
-            return None
-
-    def formatted_start_date(self):
-        if (self.start_date is None):
-            return ""
-        else:
-            return self.start_date.strftime("%b %Y").upper()
-
-    def formatted_end_date(self):
-        if (self.completion_date is None):
-            return _("PRESENT")
-        else:
-            return self.completion_date.strftime("%b %Y").upper()
 
 
 class LineItem(models.Model):

@@ -25,13 +25,14 @@
             {% if person %}
             <div id="banner">
                 <div id="languages">
+                    {% get_current_language as L_CODE %}
                     {% for lang in LANGUAGES %}
-                        <div>
+                        <div class="{% if L_CODE  == lang.0 %}active{% endif %}">
                             <form name="setLang{{ lang.0 }}" action="/i18n/setlang/" method="POST">
                                 {% csrf_token %}
                                 <input name="next" type="hidden" value="/" />
                                 <input type="hidden" name="language" value="{{ lang.0 }}" />
-                                <a href="#" onclick="document.setLang{{ lang.0 }}.submit();return false;">{{ lang.1 }}</a>
+                                <a href="#" onclick="document.setLang{{ lang.0 }}.submit();return false;">{% trans lang.1|capfirst %}</a>
                             </form>
                         </div>
                     {% endfor %}
@@ -60,8 +61,16 @@
                 <div class="content">
                     {% for e in experience_group.experiences.all %}
                     <div class="item">
-                        {% if e.date_range %}
-                        <div class="date">{{ e.date_range }}</div>
+                        {% if e.start_date or e.completition_date %}
+                        <div class="date">
+                            {% if e.start_date and e.completition_date %}
+                            {{ e.start_date|date:"b Y"|upper }} - {{ e.completition_date|date:"b Y"|upper }}
+                            {% else %}{% if e.start_date %}
+                            {{ e.start_date|date:"b Y"|upper }} - {% trans "PRESENT" %}
+                            {% else %}{% if e.completition_date %}
+                            {{ e.completition_date|date:"b Y"|upper }}
+                            {% endif %}{% endif %}{% endif %}
+                        </div>
                         {% endif %}
                         <h4>
                             <a href='{% if e.url %}{{ e.url }}{% else%}#{% endif %}' target="_blank">{{ e.title }}</a>
