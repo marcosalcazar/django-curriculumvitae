@@ -1,3 +1,4 @@
 Django==1.4.1
 PIL
 django-transmeta==0.6.8
+django-simple-captcha

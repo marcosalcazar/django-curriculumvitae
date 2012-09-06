@@ -24,3 +24,7 @@ urlpatterns = patterns('',
         {'document_root': settings.STATIC_ROOT}),
 
 )
+
+urlpatterns += patterns('',
+    url(r'^captcha/', include('captcha.urls')),
+)

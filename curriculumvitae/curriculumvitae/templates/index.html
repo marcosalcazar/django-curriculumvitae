@@ -33,11 +33,9 @@
                 <div id="info">
                     <p>{{ person.email }}</p>
                     <p>{{ person.phone }}</p>
-                    <p>{{ person.full_address }}</p>
-                    <!-- div id="contact">
-                    <span>{% trans 'Contact' %}</span>
-                        <div id="form"></div>
-                    </div -->
+                    {% if person.address %}
+                    <p>{{ person.address }}</p>
+                    {% endif %}
                 </div>
                 <br class='clear' />
             </div>
@@ -75,6 +73,19 @@
                 <div class="clear"></div>
             </div>
             {% endfor %}
+
+            <div class="section" id="contact">
+                <h3>{% trans "Contact" %}<div class="lefthead"></div></h3>
+                <div class="content">
+                    <div class="item" id="contact_container"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <!-- div id="contact">
+            <span>{% trans 'Contact' %}</span>
+                <div id="form"></div>
+            </div -->
 
         </div><!-- /wrapper -->
     </body>

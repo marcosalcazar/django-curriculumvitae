@@ -146,3 +146,46 @@ h6{
     border-bottom:1px solid #ddd;
     position:relative;
 }
+
+/**** CONTACT ****/
+#contact_container{
+    padding:20px;
+}
+.fieldsWrapper {
+    margin: 15px 0;
+}
+#contact_container div input, #contact_container div textarea{
+    border-top:1px solid #00596c;
+    border-left:1px solid #00596c;
+    border-right:none;
+    border-bottom:none;
+    outline:none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    color:#666;
+    width:170px;
+    padding:4px;
+}
+#contact_container .error input, #contact_container .error textarea{
+    border-top:1px solid red;
+    border-left:1px solid red;
+}
+.error_messages {
+    color: red;
+    margin: 5px 0;
+}
+#contact_container label {
+    display:block;
+}
+#contact_container .button{
+    background:#004959;
+    border:1px solid #33c8e8;
+    color:white;
+    padding:4px;
+}
+#contact_container .errorlist{
+    margin: 0px;
+    padding: 0px;
+    color: red;
+    line-height: 15px;
+}

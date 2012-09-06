@@ -14,9 +14,6 @@ class Person(models.Model):
     short_description = \
         models.CharField(max_length=255, verbose_name=_("Short Description"))
     address = models.CharField(max_length=255, null=True, blank=True)
-    address_locality = models.CharField(max_length=255, null=True, blank=True)
-    address_region = models.CharField(max_length=255, null=True, blank=True)
-    address_country = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField()
     phone = models.CharField(max_length=100)
     mugshot = models.ImageField(upload_to='mugshots',
@@ -28,14 +25,6 @@ class Person(models.Model):
 
     def full_name(self):
         return " ".join([self.first_name, self.last_name])
-
-    def full_address(self):
-        return ", ".join([
-            self.address,
-            self.address_locality,
-            self.address_region,
-            self.address_country
-        ])
 
     def __unicode__(self):
         return self.full_name()
