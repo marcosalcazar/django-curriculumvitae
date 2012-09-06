@@ -11,7 +11,10 @@ from curriculumvitae.models import Person
 
 
 def __get_person():
-    return Person.objects.all()[0]
+    try:
+        return Person.objects.all()[0]
+    except:
+        return None
 
 
 def curriculum(request):

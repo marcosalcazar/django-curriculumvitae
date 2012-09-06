@@ -5,7 +5,7 @@ A Django project to build a simple CV
 
 Installation
 ------------
-Requirements are listed in requirements.pip. You can install them just running
+Requirements are listed in requirements.pip. You can install them just running:
 	pip install -r requirements.pip
 
 Loading Sample Data

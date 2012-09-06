@@ -22,6 +22,7 @@
     <body>
 
         <div id="wrapper">
+            {% if person %}
             <div id="banner">
                 <div id="logo">
                     <h1>{{ person.full_name }}</h1>
@@ -82,11 +83,12 @@
                 <div class="clear"></div>
             </div>
 
-            <!-- div id="contact">
-            <span>{% trans 'Contact' %}</span>
-                <div id="form"></div>
-            </div -->
-
+            {% else %}
+            <div class="section">
+            {% trans 'Please, configure your CV first!'%}
+            <a href="{% url admin:curriculumvitae_person_add %}">{% trans 'Go to admin page' %}</admin>
+            </div>
+            {% endif %}
         </div><!-- /wrapper -->
     </body>
 </html>
