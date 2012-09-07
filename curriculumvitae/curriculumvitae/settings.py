@@ -170,10 +170,14 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['console', 'mail_admins', 'file'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
+        'curriculumvitae': {
+            'handlers': ['file'],
+            'propagate': True,
+        }
     }
 }
 

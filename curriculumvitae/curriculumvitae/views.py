@@ -1,5 +1,6 @@
 # -*- coding: utf-8 *-*
 import traceback
+import logging
 
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
@@ -66,6 +67,8 @@ def contact(request):
             'form': cf
         }, context_instance=RequestContext(request))
     except:
+        logger = logging.getLogger('curriculumvitae')
+        logger.error(traceback.format_exc())
         print traceback.format_exc()
 
 
