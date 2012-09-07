@@ -48,9 +48,11 @@ def contact(request):
         if request.method == 'POST':
             cf = ContactForm(request.POST)
             if cf.is_valid():
-                subject = "[Email from CV] %s" % cf.cleaned_data['topic']
+                subject = \
+                    "[Email from CV] %s - %s" % (cf.cleaned_data['topic'],
+                                                 cf.cleaned_data['email'])
                 message = cf.cleaned_data['message']
-                from_email = cf.cleaned_data['email']
+                from_email = settings.DEFAULT_FROM_EMAIL
                 try:
                     send_mail(
                         subject,
