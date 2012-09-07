@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}responsive.css" />
+
         <script type="text/javascript" src="{{ STATIC_URL }}jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}general.js"></script>
         <!--[if lt IE 9]>
@@ -37,6 +38,9 @@
             {% if person %}
             <div id="banner">
                 <div id="languages">
+                    <div>
+                        <a href="{% url print_as_pdf %}">print as pdf</a>
+                    </div>
                     {% get_current_language as L_CODE %}
                     {% for lang in LANGUAGES %}
                         <div class="{% if L_CODE  == lang.0 %}active{% endif %}">

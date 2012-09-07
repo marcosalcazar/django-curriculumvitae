@@ -10,6 +10,9 @@ urlpatterns = patterns('',
 
     url(r'^$', 'curriculumvitae.views.curriculum', name='home'),
     url(r'^contact/$', 'curriculumvitae.views.contact', name='contact'),
+    url(r'^print_as_pdf/$', 'curriculumvitae.views.print_as_pdf',
+        name='print_as_pdf'),
+
     # url(r'^curriculumvitae/', include('curriculumvitae.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

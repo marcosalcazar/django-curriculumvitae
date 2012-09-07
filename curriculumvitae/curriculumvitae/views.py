@@ -1,4 +1,6 @@
 # -*- coding: utf-8 *-*
+import cStringIO as StringIO
+import ho.pisa as pisa
 import traceback
 
 from django.conf import settings
@@ -6,6 +8,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.template.loader import render_to_string
 
 from curriculumvitae.forms import ContactForm
 from curriculumvitae.models import Person
@@ -23,6 +26,24 @@ def curriculum(request):
         'person': __get_person(),
         'GOOGLE_ANALYTICS_CODE': settings.GOOGLE_ANALYTICS_CODE
     }, context_instance=RequestContext(request))
+
+
+def __generar_pdf(html):
+    # Función para generar el archivo PDF y devolverlo mediante HttpResponse
+    result = StringIO.StringIO()
+    pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("UTF-8")), result)
+    if not pdf.err:
+        return HttpResponse(result.getvalue(), mimetype='application/pdf')
+    return HttpResponse('Error al generar el PDF')
+
+
+def print_as_pdf(request):
+    html = render_to_string('index.html', {
+        'pagesize': 'A4',
+        'print': True,
+        'person': __get_person()
+    }, context_instance=RequestContext(request))
+    return __generar_pdf(html)
 
 
 def contact(request):
