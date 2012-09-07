@@ -27,6 +27,12 @@ A django command is provided in order to load some sample data, just to test the
 
         python manage.py sampledata
 
+Google Analytics
+----------------
+If you want to configure your Google Analytics account, just change the value of the variable ``GOOGLE_ANALYTICS_CODE`` in ``settings.py`` from ``None`` to your webpage's Property ID.
+
+	GOOGLE_ANALYTICS_CODE = "PP-000000000-0"
+
 Sample Image Provided
 ---------------------
 * Source: [sampleimage.jpg](http://pasalodos.typepad.com/unexpecteddays/2006/10/basic.html)

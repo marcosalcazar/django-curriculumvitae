@@ -172,3 +172,5 @@ LOGGING = {
         },
     }
 }
+
+GOOGLE_ANALYTICS_CODE = None

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 *-*
 import traceback
 
+from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
@@ -19,7 +20,8 @@ def __get_person():
 
 def curriculum(request):
     return render_to_response('index.html', {
-        'person': __get_person()
+        'person': __get_person(),
+        'GOOGLE_ANALYTICS_CODE': settings.GOOGLE_ANALYTICS_CODE
     }, context_instance=RequestContext(request))
 
 
