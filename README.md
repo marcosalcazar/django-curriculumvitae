@@ -33,6 +33,12 @@ If you want to configure your Google Analytics account, just change the value of
 
 	GOOGLE_ANALYTICS_CODE = "PP-000000000-0"
 
+PDF Generation
+--------------
+PDF Generation for your Resumé has been easily added thanks to xhtml2pdf and django-xhtml2pdf. If you want to disable this, just change the value for the following key in ``settings.py`` to ``False``
+
+	PDF_AVAILABLE = False
+
 Sample Image Provided
 ---------------------
 * Source: [sampleimage.jpg](http://pasalodos.typepad.com/unexpecteddays/2006/10/basic.html)
