@@ -38,7 +38,7 @@ def print_as_pdf(request):
     #resp = HttpResponse(content_type='application/pdf')
     #result = generate_pdf('index.html', file_object=resp, context=context)
     #return result
-    pdf_name = '%s CV.pdf' % person.full_name
+    pdf_name = '%s CV.pdf' % person.full_name()
     return render_to_pdf_response('cv_as_pdf.html', context=context,
                                   pdfname=pdf_name)
 
