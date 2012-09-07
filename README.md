@@ -1,7 +1,7 @@
 django-curriculumvitae
 ======================
 
-A Django project to build a simple CV
+A Django project to build a simple CV or Resumé
 
 Installation
 ------------
