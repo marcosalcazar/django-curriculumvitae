@@ -48,7 +48,7 @@ def contact(request):
         if request.method == 'POST':
             cf = ContactForm(request.POST)
             if cf.is_valid():
-                subject = cf.cleaned_data['topic']
+                subject = "[Email from CV] %s" % cf.cleaned_data['topic']
                 message = cf.cleaned_data['message']
                 from_email = cf.cleaned_data['email']
                 try:
