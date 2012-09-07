@@ -60,7 +60,7 @@ def contact(request):
                     )
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
-                return thankyou()
+                return thankyou(request)
         else:
             cf = ContactForm()
         return render_to_response('contact.html', {
