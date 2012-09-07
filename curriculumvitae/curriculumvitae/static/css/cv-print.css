@@ -1,0 +1,49 @@
+/* ESPECIFICO DE xhtml2pdf */
+@page {
+  margin: 1cm;
+  margin-bottom: 1.5cm;
+  @frame footer {
+    -pdf-frame-content: footerContent;
+    bottom: 1cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    height: 1cm;
+  }
+}
+
+/* CABECERA */
+table#banner tr {
+    border-bottom-color: grey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+table#banner td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+table#banner td#info {
+    text-align: right;
+}
+
+/* TITULOS */
+h3{
+    padding: 35px 0 0 0;
+    border-bottom: 1px double grey;
+}
+h4{
+    padding: 10px 0 0 0;
+}
+.date {
+    padding-top: 15px;
+    padding-bottom: 0px;
+}
+
+#footerContent{
+    border-top: 2px double grey;
+    padding-top: 5px;
+    text-align: center;
+}

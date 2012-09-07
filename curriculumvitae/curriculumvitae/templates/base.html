@@ -1,0 +1,74 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="{{ person.full_name }}">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+
+        <title>{{ person.full_name }} CV</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-general.css" />
+        {% block head_extra %}{% endblock %}
+
+    </head>
+    <body>
+        <div id="wrapper">
+        {% if person %}
+            {% block content_header %}{% endblock %}
+
+            {% for experience_group in person.experiences_groups.all %}
+            <div class="section">
+                <h3>{{ experience_group.name }}<div class="lefthead"></div></h3>
+                <div class="content">
+                    {% for e in experience_group.experiences.all %}
+                    <div class="item">
+                        {% if e.start_date or e.completition_date %}
+                        <div class="date">
+                            {% if e.start_date and e.completition_date %}
+                            {{ e.start_date|date:"b Y"|upper }} - {{ e.completition_date|date:"b Y"|upper }}
+                            {% else %}{% if e.start_date %}
+                            {{ e.start_date|date:"b Y"|upper }} - {% trans "PRESENT" %}
+                            {% else %}{% if e.completition_date %}
+                            {{ e.completition_date|date:"b Y"|upper }}
+                            {% endif %}{% endif %}{% endif %}
+                        </div>
+                        {% endif %}
+                        <h4>
+                            <a href='{% if e.url %}{{ e.url }}{% else%}#{% endif %}' target="_blank">{{ e.title }}</a>
+                        </h4>
+                        {% if e.subtitle %}<h5>{{ e.subtitle }}</h5>{% endif %}
+                        {% if e.location %}<h6>{{ e.location }}</h6>{% endif %}
+                        {% if e.description %}<p>{{ e.description|linebreaksbr }}</p>{% endif %}
+                        {% if e.items %}
+                        <ul>
+                        {% for i in e.items.all %}
+                            <li>
+                                {% if i.url %}
+                                    <a href="{{ i.url }}">{{ i.url }}</a> -
+                                {% endif %}
+                                {{ i.details }}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="clear"></div>
+            </div>
+            {% endfor %}
+
+            {% block content_footer %}{% endblock %}
+
+        {% else %}
+            <div class="section">
+            {% trans 'Please, configure your CV first!'%}
+            <a href="{% url admin:curriculumvitae_person_add %}">{% trans 'Go to admin page' %}</admin>
+            </div>
+        {% endif %}
+        </div><!-- /wrapper -->
+    </body>
+</html>

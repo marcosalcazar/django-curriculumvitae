@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head_extra %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-print.css" />
+{% endblock %}
+
+{% block content_header %}
+<table id="banner">
+    <tr>
+        <td width="50%">
+            <h1>{{ person.full_name }}</h1>
+            <h2>{{ person.short_description }}</h2>
+        </td>
+        <td width="30%" id="info">
+            {{ person.email }}<br />
+            {{ person.phone }}<br />
+            {% if person.address %}
+            {{ person.address }}<br />
+            {% endif %}
+        </td>
+        <td width="20%">
+            <img src="{{ MEDIA_URL }}{{ person.mugshot }}" width="105" height="105" alt="me" />
+        </td>
+    </tr>
+</table>
+{% endblock %}
+
+{% block content_footer %}
+<div id="footerContent">
+    {{ person.full_name }} CV - {% trans "Page"%} <pdf:pagenumber>
+</div>
+{% endblock %}
