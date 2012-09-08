@@ -36,7 +36,7 @@ def print_as_pdf(request):
     person = __get_person()
     context['person'] = person
     context['print'] = True
-    pdf_name = smart_str(u'%s CV.pdf' % person.full_name().replace(" ", "_"))
+    pdf_name = smart_str(u'%s.pdf' % person.full_name().replace(" ", "_"))
     return render_to_pdf_response('cv_as_pdf.html', context=context,
                                   pdfname=pdf_name)
 
