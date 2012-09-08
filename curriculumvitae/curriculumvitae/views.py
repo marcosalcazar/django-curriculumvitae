@@ -7,6 +7,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
+from django.utils.encoding import smart_str
 
 from curriculumvitae.forms import ContactForm
 from curriculumvitae.models import Person
@@ -35,10 +36,7 @@ def print_as_pdf(request):
     person = __get_person()
     context['person'] = person
     context['print'] = True
-    #resp = HttpResponse(content_type='application/pdf')
-    #result = generate_pdf('index.html', file_object=resp, context=context)
-    #return result
-    pdf_name = '%s CV.pdf' % person.full_name().replace(" ", "_")
+    pdf_name = smart_str(u'%s CV.pdf' % person.full_name().replace(" ", "_"))
     return render_to_pdf_response('cv_as_pdf.html', context=context,
                                   pdfname=pdf_name)
 
