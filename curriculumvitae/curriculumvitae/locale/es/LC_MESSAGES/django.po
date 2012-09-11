@@ -9,132 +9,146 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-07 19:29-0300\n"
+"POT-Creation-Date: 2012-09-11 15:27-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: curriculumvitae/forms.py:13 curriculumvitae/models.py:39
+#: .\curriculumvitae\forms.py:13 .\curriculumvitae\models.py:9
+#: .\curriculumvitae\models.py:52
 msgid "Name"
 msgstr "Nombre"
 
-#: curriculumvitae/forms.py:14
+#: .\curriculumvitae\forms.py:14
 msgid "Email"
 msgstr ""
 
-#: curriculumvitae/forms.py:15
+#: .\curriculumvitae\forms.py:15
 msgid "Topic"
 msgstr "Motivo"
 
-#: curriculumvitae/forms.py:16
+#: .\curriculumvitae\forms.py:16
 msgid "Message"
 msgstr "Mensaje"
 
-#: curriculumvitae/models.py:12
+#: .\curriculumvitae\models.py:12
+msgid "Styles"
+msgstr "Estilos"
+
+#: .\curriculumvitae\models.py:22
 msgid "First Name"
 msgstr "Nombre"
 
-#: curriculumvitae/models.py:14
+#: .\curriculumvitae\models.py:24
 msgid "Last Name"
 msgstr "Apellido"
 
-#: curriculumvitae/models.py:16
+#: .\curriculumvitae\models.py:26
 msgid "Short Description"
 msgstr "Descripción Corta"
 
-#: curriculumvitae/models.py:21
+#: .\curriculumvitae\models.py:31
 msgid "A squared one is prefered"
 msgstr "Preferentemente una cuadrada (100x100, por ejemplo)"
 
-#: curriculumvitae/models.py:24
+#: .\curriculumvitae\models.py:34
+msgid "Curriculum Vitae Style"
+msgstr "Estilo del Curriculum Vitae"
+
+#: .\curriculumvitae\models.py:37
 msgid "Personal Info"
 msgstr "Información Personal"
 
-#: curriculumvitae/models.py:38
+#: .\curriculumvitae\models.py:51
 msgid "Person"
 msgstr "Persona"
 
-#: curriculumvitae/models.py:55
+#: .\curriculumvitae\models.py:56
+#, fuzzy
+msgid "Experience Groups"
+msgstr "Experiencias"
+
+#: .\curriculumvitae\models.py:69
 msgid "Experience Type"
 msgstr "Tipo de Experiencia"
 
-#: curriculumvitae/models.py:56
+#: .\curriculumvitae\models.py:70
 msgid "Title"
 msgstr "Título"
 
-#: curriculumvitae/models.py:58
+#: .\curriculumvitae\models.py:72
 msgid "Subtitle"
 msgstr "Sutbtítulo"
 
-#: curriculumvitae/models.py:61
+#: .\curriculumvitae\models.py:75
 msgid "Location"
 msgstr "Ubicación"
 
-#: curriculumvitae/models.py:62
+#: .\curriculumvitae\models.py:76
 msgid "Description"
 msgstr "Descripción"
 
-#: curriculumvitae/models.py:64
+#: .\curriculumvitae\models.py:78
 msgid "Start Date"
 msgstr "Fecha de Inicio"
 
-#: curriculumvitae/models.py:67
+#: .\curriculumvitae\models.py:81
 msgid "Completion Date"
 msgstr "Fecha de Fin"
 
-#: curriculumvitae/models.py:73
+#: .\curriculumvitae\models.py:87
 msgid "Experience"
 msgstr "Experiencia"
 
-#: curriculumvitae/models.py:74
+#: .\curriculumvitae\models.py:88
 msgid "Experiences"
 msgstr "Experiencias"
 
-#: curriculumvitae/models.py:84
+#: .\curriculumvitae\models.py:98
 msgid "Details"
 msgstr "Detalles"
 
-#: curriculumvitae/settings.py:44
+#: .\curriculumvitae\settings.py:50
 msgid "Spanish"
 msgstr "Español"
 
-#: curriculumvitae/settings.py:45
+#: .\curriculumvitae\settings.py:51
 msgid "English"
 msgstr "Inglés"
 
-#: curriculumvitae/templates/base.html:33
+#: .\curriculumvitae\templates\base.html.py:33
 msgid "PRESENT"
 msgstr "ACTUALIDAD"
 
-#: curriculumvitae/templates/base.html:68
+#: .\curriculumvitae\templates\base.html.py:68
 msgid "Please, configure your CV first!"
 msgstr "Por favor, configure su CV antes!"
 
-#: curriculumvitae/templates/base.html:69
+#: .\curriculumvitae\templates\base.html.py:69
 msgid "Go to admin page"
 msgstr "Ir a página de configuración"
 
-#: curriculumvitae/templates/contact.html:16
+#: .\curriculumvitae\templates\contact.html.py:16
 msgid "submit"
 msgstr "enviar"
 
-#: curriculumvitae/templates/cv_as_html.html:33
+#: .\curriculumvitae\templates\cv_as_html.html.py:34
 msgid "Download as PDF"
 msgstr "Descargar como PDF"
 
-#: curriculumvitae/templates/cv_as_html.html:68
+#: .\curriculumvitae\templates\cv_as_html.html.py:70
 msgid "Contact"
 msgstr "Contacto"
 
-#: curriculumvitae/templates/cv_as_pdf.html:31
+#: .\curriculumvitae\templates\cv_as_pdf.html.py:31
 msgid "Page"
 msgstr "Página"
 
-#: curriculumvitae/templates/thankyou.html:2
+#: .\curriculumvitae\templates\thankyou.html.py:2
 msgid "Thank You! You'll be answered as soon as possible"
 msgstr "Gracias! La respuesta le será enviada tan pronto como sea posible"

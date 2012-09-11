@@ -1,8 +1,8 @@
 [
     {
-        'curriculumvitae.style', 'pk': 1,
-        'fields': {
-            'name': 'lightblue'
+        "model": "curriculumvitae.style", "pk": 1,
+        "fields": {
+            "name": "lightblue"
         }
     }
 ]

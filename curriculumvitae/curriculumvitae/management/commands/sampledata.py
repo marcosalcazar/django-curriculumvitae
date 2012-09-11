@@ -3,13 +3,15 @@ import datetime
 from django.core.management.base import NoArgsCommand
 
 from curriculumvitae.models import Person, ExperienceGroup, ExperienceItem, \
-    LineItem
+    LineItem, Style
 
 
 class Command(NoArgsCommand):
     help = "Fill the database with sample data (English and Spanish only)"
 
     def handle_noargs(self, **options):
+
+        cvs = Style.objects.get(pk=1)
 
         print "Creating a person:"
         p = Person.objects.create(
@@ -20,7 +22,8 @@ class Command(NoArgsCommand):
             address='97 Evergreen Av.',
             email='jhon.doe@youremail.com',
             phone='0321-123456321',
-            mugshot='mugshots/sampleimage.jpg'
+            mugshot='mugshots/sampleimage.jpg',
+            curriculum_vitae_style=cvs
         )
 
         print "Creating education history"

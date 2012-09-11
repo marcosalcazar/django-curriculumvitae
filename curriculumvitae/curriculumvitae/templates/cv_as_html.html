@@ -2,8 +2,8 @@
 {% load i18n %}
 
 {% block head_extra %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-html.css" />
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-responsive.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/{{ person.curriculum_vitae_style }}/cv-html.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/{{ person.curriculum_vitae_style }}/cv-responsive.css" />
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/general.js"></script>
 <!--[if lt IE 9]>

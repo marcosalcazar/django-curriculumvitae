@@ -10,7 +10,7 @@
 
         <title>{{ person.full_name }} CV</title>
 
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-general.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/{{ person.curriculum_vitae_style }}/cv-general.css" />
         {% block head_extra %}{% endblock %}
 
     </head>
