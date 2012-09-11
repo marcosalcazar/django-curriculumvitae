@@ -1,0 +1,8 @@
+[
+    {
+        'curriculumvitae.style', 'pk': 1,
+        'fields': {
+            'name': 'lightblue'
+        }
+    }
+]
