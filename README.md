@@ -6,7 +6,8 @@ A Django project to build a simple CV or Resumé
 Installation
 ------------
 Requirements are listed in requirements.pip. You can install them just running:
-        pip install -r requirements.pip
+
+	pip install -r requirements.pip
 
 Languages
 ---------
@@ -32,6 +33,12 @@ Google Analytics
 If you want to configure your Google Analytics account, just change the value of the variable ``GOOGLE_ANALYTICS_CODE`` in ``settings.py`` from ``None`` to your webpage's Property ID.
 
 	GOOGLE_ANALYTICS_CODE = "PP-000000000-0"
+
+PDF Generation
+--------------
+PDF Generation for your Resumé has been easily added thanks to xhtml2pdf and django-xhtml2pdf. If you want to disable this, just change the value for the following key in ``settings.py`` to ``False``
+
+	PDF_AVAILABLE = False
 
 Sample Image Provided
 ---------------------

@@ -1,4 +1,5 @@
 *.nja
 *.sqlite
 *.pyc
-curriculumvitae\curriculumvitae\media\mugshots\*.jpg
+*\mugshots\*.jpg
+*.log

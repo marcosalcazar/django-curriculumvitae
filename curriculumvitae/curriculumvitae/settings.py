@@ -28,6 +28,12 @@ DATABASES = {
     }
 }
 
+EMAIL_HOST = "smtp.SAMPLE.com"
+EMAIL_HOST_USER = "<mailbox>"
+EMAIL_HOST_PASSWORD = "<password>"
+DEFAULT_FROM_EMAIL = "<address>"
+EMAIL_PORT = "25"
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -162,6 +168,10 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'file': {
+        'class': 'logging.FileHandler',
+        'filename': 'errors.log',
         }
     },
     'loggers': {
@@ -170,7 +180,12 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'curriculumvitae': {
+            'handlers': ['file'],
+            'propagate': True,
+        }
     }
 }
 
 GOOGLE_ANALYTICS_CODE = None
+PDF_AVAILABLE = True

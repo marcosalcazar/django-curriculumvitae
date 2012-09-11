@@ -1,17 +1,19 @@
 # -*- coding: utf-8 *-*
-import cStringIO as StringIO
-import ho.pisa as pisa
 import traceback
+import logging
 
 from django.conf import settings
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from django.template.loader import render_to_string
+from django.utils.encoding import smart_str
 
 from curriculumvitae.forms import ContactForm
 from curriculumvitae.models import Person
+
+if settings.PDF_AVAILABLE:
+    from django_xhtml2pdf.utils import render_to_pdf_response
 
 
 def __get_person():
@@ -22,28 +24,21 @@ def __get_person():
 
 
 def curriculum(request):
-    return render_to_response('index.html', {
+    return render_to_response('cv_as_html.html', {
         'person': __get_person(),
-        'GOOGLE_ANALYTICS_CODE': settings.GOOGLE_ANALYTICS_CODE
+        'GOOGLE_ANALYTICS_CODE': settings.GOOGLE_ANALYTICS_CODE,
+        'PDF_AVAILABLE': settings.PDF_AVAILABLE
     }, context_instance=RequestContext(request))
-
-
-def __generar_pdf(html):
-    # Función para generar el archivo PDF y devolverlo mediante HttpResponse
-    result = StringIO.StringIO()
-    pdf = pisa.pisaDocument(StringIO.StringIO(html.encode("UTF-8")), result)
-    if not pdf.err:
-        return HttpResponse(result.getvalue(), mimetype='application/pdf')
-    return HttpResponse('Error al generar el PDF')
 
 
 def print_as_pdf(request):
-    html = render_to_string('index.html', {
-        'pagesize': 'A4',
-        'print': True,
-        'person': __get_person()
-    }, context_instance=RequestContext(request))
-    return __generar_pdf(html)
+    context = settings.__dict__.get('_wrapped').__dict__.copy()
+    person = __get_person()
+    context['person'] = person
+    context['print'] = True
+    pdf_name = smart_str(u'%s.pdf' % person.full_name().replace(" ", "_"))
+    return render_to_pdf_response('cv_as_pdf.html', context=context,
+                                  pdfname=pdf_name)
 
 
 def contact(request):
@@ -51,9 +46,11 @@ def contact(request):
         if request.method == 'POST':
             cf = ContactForm(request.POST)
             if cf.is_valid():
-                subject = cf.cleaned_data['topic']
+                subject = \
+                    "[Email from CV] %s - %s" % (cf.cleaned_data['topic'],
+                                                 cf.cleaned_data['email'])
                 message = cf.cleaned_data['message']
-                from_email = cf.cleaned_data['email']
+                from_email = settings.DEFAULT_FROM_EMAIL
                 try:
                     send_mail(
                         subject,
@@ -63,13 +60,15 @@ def contact(request):
                     )
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
-                return thankyou()
+                return thankyou(request)
         else:
             cf = ContactForm()
         return render_to_response('contact.html', {
             'form': cf
         }, context_instance=RequestContext(request))
     except:
+        logger = logging.getLogger('curriculumvitae')
+        logger.error(traceback.format_exc())
         print traceback.format_exc()
 
 

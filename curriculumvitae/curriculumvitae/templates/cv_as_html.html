@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head_extra %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-html.css" />
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/cv-responsive.css" />
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/general.js"></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    {% if GOOGLE_ANALYTICS_CODE %}
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_CODE }}']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    {% endif %}
+</script>
+{% endblock %}
+
+{% block content_header %}
+
+<div id="banner">
+    <div id="languages">
+        {% if PDF_AVAILABLE %}
+        <div>
+            | <a href="{% url print_as_pdf %}">{% trans "Download as PDF" %}</a>
+        </div>
+        {% endif %}
+        {% get_current_language as L_CODE %}
+        {% for lang in LANGUAGES %}
+            <div class="{% if L_CODE  == lang.0 %}active{% endif %}">
+                <form name="setLang{{ lang.0 }}" action="/i18n/setlang/" method="POST">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="/" />
+                    <input type="hidden" name="language" value="{{ lang.0 }}" />
+                    <a href="#" onclick="document.setLang{{ lang.0 }}.submit();return false;">{% trans lang.1|capfirst %}</a>
+                </form>
+            </div>
+        {% endfor %}
+        <div class='clear'></div>
+    </div>
+    <div id="logo">
+        <h1>{{ person.full_name }}</h1>
+        <h2>{{ person.short_description }}</h2>
+    </div>
+    <div id="mugshot">
+        <img src="{{ MEDIA_URL }}{{ person.mugshot }}" width="105" height="105" alt="me" />
+    </div>
+    <div id="info">
+        <p>{{ person.email }}</p>
+        <p>{{ person.phone }}</p>
+        {% if person.address %}
+        <p>{{ person.address }}</p>
+        {% endif %}
+    </div>
+    <br class='clear' />
+</div>
+{% endblock %}
+
+{% block content_footer %}
+<div class="section" id="contact">
+    <h3>{% trans "Contact" %}<div class="lefthead"></div></h3>
+    <div class="content">
+        <div class="item" id="contact_container"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock %}
