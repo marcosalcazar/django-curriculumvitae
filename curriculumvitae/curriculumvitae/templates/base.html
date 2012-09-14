@@ -25,14 +25,14 @@
                 <div class="content">
                     {% for e in experience_group.experiences.all %}
                     <div class="item">
-                        {% if e.start_date or e.completition_date %}
+                        {% if e.start_date or e.completion_date %}
                         <div class="date">
-                            {% if e.start_date and e.completition_date %}
-                            {{ e.start_date|date:"b Y"|upper }} - {{ e.completition_date|date:"b Y"|upper }}
+                            {% if e.start_date and e.completion_date %}
+                            {{ e.start_date|date:"b Y"|upper }} - {{ e.completion_date|date:"b Y"|upper }}
+                            {% else %}{% if e.completion_date %}
+                            {{ e.completion_date|date:"b Y"|upper }}
                             {% else %}{% if e.start_date %}
                             {{ e.start_date|date:"b Y"|upper }} - {% trans "PRESENT" %}
-                            {% else %}{% if e.completition_date %}
-                            {{ e.completition_date|date:"b Y"|upper }}
                             {% endif %}{% endif %}{% endif %}
                         </div>
                         {% endif %}
