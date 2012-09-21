@@ -2,8 +2,8 @@
 import datetime
 from django.core.management.base import NoArgsCommand
 
-from curriculumvitae.models import Person, ExperienceGroup, ExperienceItem, \
-    LineItem, Style
+from curriculumvitae.models import ExperienceGroup, ExperienceItem, LineItem
+from onlineresume.models import Style, Person
 
 
 class Command(NoArgsCommand):

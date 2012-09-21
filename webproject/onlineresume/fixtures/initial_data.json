@@ -1,6 +1,6 @@
 [
     {
-        "model": "curriculumvitae.style", "pk": 1,
+        "model": "onlineresume.style", "pk": 1,
         "fields": {
             "name": "lightblue"
         }

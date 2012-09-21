@@ -10,8 +10,8 @@
 
         <title>{{ person.full_name }} CV</title>
 
-        <link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico">
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles/{{ person.curriculum_vitae_style }}/cv-general.css" />
+
         {% block head_extra %}{% endblock %}
 
     </head>
@@ -70,6 +70,7 @@
             <a href="{% url admin:curriculumvitae_person_add %}">{% trans 'Go to admin page' %}</admin>
             </div>
         {% endif %}
+
         </div><!-- /wrapper -->
     </body>
 </html>

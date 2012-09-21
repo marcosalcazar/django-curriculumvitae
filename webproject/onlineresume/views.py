@@ -9,8 +9,8 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.utils.encoding import smart_str
 
-from curriculumvitae.forms import ContactForm
-from curriculumvitae.models import Person
+from onlineresume.forms import ContactForm
+from onlineresume.models import Person
 
 if settings.PDF_AVAILABLE:
     from django_xhtml2pdf.utils import render_to_pdf_response

@@ -5,16 +5,6 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 
-class Style(models.Model):
-    name = models.CharField(max_length=255, verbose_name=_("Name"))
-
-    class Meta:
-        verbose_name_plural = _("Styles")
-
-    def __unicode__(self):
-        return self.name
-
-
 class Person(models.Model):
     __metaclass__ = TransMeta
 
@@ -29,9 +19,6 @@ class Person(models.Model):
     phone = models.CharField(max_length=100)
     mugshot = models.ImageField(upload_to='mugshots',
                                 help_text=_("A squared one is prefered"))
-    curriculum_vitae_style = \
-        models.ForeignKey(Style,
-                          verbose_name=_("Curriculum Vitae Style"))
 
     class Meta:
         verbose_name_plural = _("Personal Info")

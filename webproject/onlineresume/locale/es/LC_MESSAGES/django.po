@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-21 08:54-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: .\forms.py:13 .\models.py:9
+msgid "Name"
+msgstr "Nombre"
+
+#: .\forms.py:14
+msgid "Email"
+msgstr ""
+
+#: .\forms.py:15
+msgid "Topic"
+msgstr "Motivo"
+
+#: .\forms.py:16
+msgid "Message"
+msgstr "Mensaje"
+
+#: .\models.py:12
+msgid "Styles"
+msgstr "Estilos"
+
+#: .\models.py:23
+msgid "Curriculum Vitae Style"
+msgstr "Estilo del Curriculum Vitae"
+
+#: .\settings.py:50
+msgid "Spanish"
+msgstr "Español"
+
+#: .\settings.py:51
+msgid "English"
+msgstr "Inglés"
+
+#: .\templates\base.html.py:36
+msgid "PRESENT"
+msgstr "ACTUALIDAD"
+
+#: .\templates\base.html.py:69
+msgid "Please, configure your CV first!"
+msgstr "Por favor, configure su Currículum Primero"
+
+#: .\templates\base.html.py:70
+msgid "Go to admin page"
+msgstr "Ir a la página de administración"
+
+#: .\templates\contact.html.py:16
+msgid "submit"
+msgstr "enviar"
+
+#: .\templates\cv_as_html.html.py:34
+msgid "Download as PDF"
+msgstr "Descargar como PDF"
+
+#: .\templates\cv_as_html.html.py:70
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\templates\cv_as_pdf.html.py:31
+msgid "Page"
+msgstr "Página"
+
+#: .\templates\thankyou.html.py:2
+msgid "Thank You! You'll be answered as soon as possible"
+msgstr "Gracias! La respuesta le será enviada tan pronto como sea posible"

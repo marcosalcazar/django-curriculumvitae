@@ -3,3 +3,6 @@
 *.pyc
 *\mugshots\*.jpg
 *.log
+build
+dist
+*.egg-info

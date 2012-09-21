@@ -1,5 +1,5 @@
 # -*- coding: utf-8 *-*
-# Django settings for curriculumvitae project.
+# Django settings for webproject project.
 import os
 
 DEBUG = True
@@ -16,7 +16,7 @@ DATABASES = {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.sqlite3',
         # Or path to database file if using sqlite3.
-        'NAME': 'curriculumvitae.sqlite',
+        'NAME': 'webproject.sqlite',
         # Not used with sqlite3.
         'USER': '',
         # Not used with sqlite3.
@@ -119,10 +119,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'curriculumvitae.urls'
+ROOT_URLCONF = 'onlineresume.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'curriculumvitae.wsgi.application'
+WSGI_APPLICATION = 'onlineresume.wsgi.application'
 
 TEMPLATE_DIRS = (
     # e.g. "/home/html/django_templates" or "C:/www/django/templates".
@@ -141,9 +141,10 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
-    'captcha',
-
     'curriculumvitae',
+    'captcha',
+    'onlineresume',
+
 )
 
 # A sample logging configuration. The only tangible logging
