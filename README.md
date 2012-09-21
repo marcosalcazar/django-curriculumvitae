@@ -23,12 +23,8 @@ and, if you want to setup the project, in adition you can run::
 
 Installation
 ------------
-If you only want to install the app, you can install it through pypi:
-
-        pip install django-curriculumvitae
-
-If you want to install the complete project, just check it out using git,
-and inside the project, you can install the app using::
+Just check it out using git, and inside the project, you can install the app 
+using::
 
         python setup.py install
 
