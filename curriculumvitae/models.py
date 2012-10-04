@@ -86,3 +86,20 @@ class LineItem(models.Model):
 
     class Meta:
         translate = ("details", )
+
+
+class Link(models.Model):
+
+    person = models.ForeignKey(Person, related_name='links',
+                               verbose_name=_('Person'))
+    title = models.CharField(max_length=100, verbose_name=_("Title"))
+    url = models.URLField('URL', verify_exists=False)
+    icon = models.ImageField(upload_to='icons',
+                             help_text=_("A squared one is prefered"))
+    order = models.IntegerField()
+
+    class Meta:
+        ordering = ('order',)
+
+    def __unicode__(self):
+        return self.title

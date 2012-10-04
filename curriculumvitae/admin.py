@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 from curriculumvitae.models import Person, ExperienceGroup, ExperienceItem, \
-    LineItem
+    LineItem, Link
 
 
 class ExperienceItemInline(admin.TabularInline):
@@ -25,6 +25,13 @@ class ExperienceGroupAdmin(admin.ModelAdmin):
     list_display = ('name', 'order')
     list_editable = ('order',)
 
+
+class LinkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order')
+    list_editable = ('order',)
+
+
 admin.site.register(Person)
 admin.site.register(ExperienceGroup, ExperienceGroupAdmin)
 admin.site.register(ExperienceItem, ExperienceAdmin)
+admin.site.register(Link, LinkAdmin)

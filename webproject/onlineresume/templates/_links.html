@@ -1,0 +1,22 @@
+{% load i18n %}
+<style>
+    .section h5 a {
+        text-decoration: none;
+    }
+</style>
+<div class="section" id="links">
+    <h3>{% trans "On the Web" %}<div class="lefthead"></div></h3>
+    <div class="content">
+        <div class="item">
+            {% for link in person.links.all %}
+            <h5>
+                <a href="{{ link.url }}">
+                    <img src="{{ MEDIA_URL }}{{ link.icon }}" style='vertical-align: middle' />
+                    {{ link }}
+                </a>
+            </h5>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -15,9 +15,22 @@ class Style(models.Model):
         return self.name
 
 
+LINKS_LOCATION = (
+    ('T', _(u'Top')),
+    ('B', _(u'Bottom'))
+)
+
+
 class Person(cv_models.Person):
     """Extend CV Person to add the selected styles"""
 
     curriculum_vitae_style = \
         models.ForeignKey(Style,
                           verbose_name=_("Curriculum Vitae Style"))
+    links_location = models.CharField(max_length=1,
+                                      default='T',
+                                      choices=LINKS_LOCATION,
+                                      verbose_name=_("Links Location"),
+                                      help_text=_("Where static links will" +
+                                          " be located, if at least one is" +
+                                          " defined"))

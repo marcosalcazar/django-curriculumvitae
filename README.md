@@ -72,3 +72,6 @@ Sample Image Provided
 ---------------------
 * Source: [sampleimage.jpg](http://pasalodos.typepad.com/unexpecteddays/2006/10/basic.html)
 
+Icons Provided
+--------------
+* Source: [Mono Social Icons](http://icondock.com/free/mono-social-icons)

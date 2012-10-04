@@ -8,75 +8,96 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-21 08:54-0300\n"
+"POT-Creation-Date: 2012-10-04 12:51-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: .\forms.py:13 .\models.py:9
+#: forms.py:13 models.py:9
 msgid "Name"
 msgstr "Nombre"
 
-#: .\forms.py:14
+#: forms.py:14
 msgid "Email"
 msgstr ""
 
-#: .\forms.py:15
+#: forms.py:15
 msgid "Topic"
 msgstr "Motivo"
 
-#: .\forms.py:16
+#: forms.py:16
 msgid "Message"
 msgstr "Mensaje"
 
-#: .\models.py:12
+#: models.py:12
 msgid "Styles"
 msgstr "Estilos"
 
-#: .\models.py:23
+#: models.py:19
+msgid "Top"
+msgstr "Arriba"
+
+#: models.py:20
+msgid "Bottom"
+msgstr "Abajo"
+
+#: models.py:29
 msgid "Curriculum Vitae Style"
 msgstr "Estilo del Curriculum Vitae"
 
-#: .\settings.py:50
+#: models.py:33
+msgid "Links Location"
+msgstr "Ubicación de los Links"
+
+#: models.py:34
+msgid "Where static links will"
+msgstr ""
+
+#: settings.py:50
 msgid "Spanish"
 msgstr "Español"
 
-#: .\settings.py:51
+#: settings.py:51
 msgid "English"
 msgstr "Inglés"
 
-#: .\templates\base.html.py:36
+#: templates/_links.html:8
+msgid "On the Web"
+msgstr "En la Web"
+
+#: templates/base.html:42
 msgid "PRESENT"
 msgstr "ACTUALIDAD"
 
-#: .\templates\base.html.py:69
+#: templates/base.html:81
 msgid "Please, configure your CV first!"
 msgstr "Por favor, configure su Currículum Primero"
 
-#: .\templates\base.html.py:70
+#: templates/base.html:82
 msgid "Go to admin page"
 msgstr "Ir a la página de administración"
 
-#: .\templates\contact.html.py:16
+#: templates/contact.html:16
 msgid "submit"
 msgstr "enviar"
 
-#: .\templates\cv_as_html.html.py:34
+#: templates/cv_as_html.html:34
 msgid "Download as PDF"
 msgstr "Descargar como PDF"
 
-#: .\templates\cv_as_html.html.py:70
+#: templates/cv_as_html.html:70
 msgid "Contact"
 msgstr "Contacto"
 
-#: .\templates\cv_as_pdf.html.py:31
+#: templates/cv_as_pdf.html:31
 msgid "Page"
 msgstr "Página"
 
-#: .\templates\thankyou.html.py:2
+#: templates/thankyou.html:2
 msgid "Thank You! You'll be answered as soon as possible"
 msgstr "Gracias! La respuesta le será enviada tan pronto como sea posible"

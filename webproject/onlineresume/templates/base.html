@@ -20,6 +20,12 @@
         {% if person %}
             {% block content_header %}{% endblock %}
 
+            {% if person.links %}
+            {% if person.links_location == 'T' %}
+                {% include '_links.html' %}
+            {% endif %}
+            {% endif %}
+
             {% for experience_group in person.experiences_groups.all %}
             <div class="section">
                 <h3>{{ experience_group.name }}<div class="lefthead"></div></h3>
@@ -61,6 +67,12 @@
                 <div class="clear"></div>
             </div>
             {% endfor %}
+
+            {% if person.links %}
+            {% if person.links_location == 'B' %}
+                {% include '_links.html' %}
+            {% endif %}
+            {% endif %}
 
             {% block content_footer %}{% endblock %}
 

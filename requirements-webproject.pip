@@ -1,1 +1,2 @@
 django-simple-captcha==0.3.4
+south
