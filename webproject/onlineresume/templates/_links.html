@@ -10,7 +10,7 @@
         <div class="item">
             {% for link in person.links.all %}
             <h5>
-                <a href="{{ link.url }}">
+                <a href="{{ link.url }}" target="_blank">
                     <img src="{{ MEDIA_URL }}{{ link.icon }}" style='vertical-align: middle' />
                     {{ link }}
                 </a>
