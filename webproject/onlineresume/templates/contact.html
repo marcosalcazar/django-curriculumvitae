@@ -15,6 +15,9 @@
     {% endfor %}
     <input id="submitbutton" name="submit" type="button" value="{% trans 'submit' %}" class="button"/>
 </form>
+<div id="submitloading" style="display: none;">
+    {% trans 'Your message is being submitted' %}
+</div>
 <script>
 $("#submitbutton").click(function(){
     go_to_contact(true);

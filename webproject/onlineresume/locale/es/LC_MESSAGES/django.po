@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:51-0300\n"
+"POT-Creation-Date: 2012-10-05 14:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,6 +85,10 @@ msgstr "Ir a la página de administración"
 #: templates/contact.html:16
 msgid "submit"
 msgstr "enviar"
+
+#: templates/contact.html:19
+msgid "Your message is being submitted"
+msgstr "Se mensaje está siendo enviado"
 
 #: templates/cv_as_html.html:34
 msgid "Download as PDF"
