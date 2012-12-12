@@ -16,7 +16,7 @@ class Person(models.Model):
         models.CharField(max_length=255, verbose_name=_("Short Description"))
     address = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField()
-    phone = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100, null=True, blank=True)
     mugshot = models.ImageField(upload_to='mugshots',
                                 help_text=_("A squared one is prefered"))
 
